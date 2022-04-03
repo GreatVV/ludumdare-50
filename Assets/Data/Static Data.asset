@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34065a25dd4e45cfb419c6e563fa01ad, type: 3}
+  m_Name: Static Data
+  m_EditorClassIdentifier: 
+  CharacterViews:
+  - {fileID: 3867436812668659417, guid: 30faee0b2f235fd4593f3fb6da67fba0, type: 3}
+  PushPower: 50
+  MoneyParticle: {fileID: 5056918867724471525, guid: dbede9586b0cf004588332befda51770, type: 3}
+  SpawnTime: 2

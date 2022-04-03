@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d63bc87d4069c07a8e302941d1a981f, type: 3}
+  m_Name: UchievementsData
+  m_EditorClassIdentifier: 
+  Mute: 0
+  Console: 0
+  MultiScenes:
+    Progress: 1
+    Name: More is better
+    Difficult: 1
+  BuildWithALotOfScenes:
+    Progress: 0
+    Name: Multiverse
+    Difficult: 2
+  BuildForAndroidOrIos:
+    Progress: 0
+    Name: Mobility
+    Difficult: 0
+  BuildForPc:
+    Progress: 0
+    Name: PC Forever!
+    Difficult: 0
+  BuildForConsole:
+    Progress: 0
+    Name: Exclusive build
+    Difficult: 0
+  Builds:
+    Progress: 0
+    Name: Great builder
+    Difficult: 2
+  PauseInPlayMode:
+    Progress: 9
+    Name: Debug like a pro
+    Difficult: 3
+  PauseInEditMode:
+    Progress: 0
+    Name: Pause in pause
+    Difficult: 3
+  SaveScene:
+    Progress: 3
+    Name: Keep calm and save scene
+    Difficult: 3
+  ImportPackages:
+    Progress: 1
+    Name: Project from projects
+    Difficult: 0
+  CompilingTime:
+    Progress: 1.1243857
+    Name: Compiling...
+    Difficult: 0
+  BuildForWeb:
+    Progress: 0
+    Name: Browser warrior
+    Difficult: 0
