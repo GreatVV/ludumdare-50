@@ -9,5 +9,10 @@ namespace Client
         public Ragdoll Ragdoll;
         public Rigidbody Rigidbody;
         public EcsEntity Entity;
+
+        public void Flap()
+        {
+            Animator.SetTrigger("Flap");
+        }
     }
 }

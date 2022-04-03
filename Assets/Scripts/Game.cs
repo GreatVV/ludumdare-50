@@ -1,3 +1,4 @@
+using System.Numerics;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -25,12 +26,23 @@ namespace Client {
             _systems
                 .Add(new InitSystem())
                 .Add(new SpawnCharacterSystem())
+                .Add(new DragSystem())
                 .Add(new LaunchSystem())
                 .Add(new DeathSystem())
+                .Add(new StuckSystem())
                 .Add(new SpawnDeathCoinSystem())
                 .Add(new TeleportToStartSystem())
                 .Add(new AutoTeleportOnDeathSystem())
+                .Add(new SpawnItemsToBuySystem())
+                .Add(new TryBuyItemSystem())
+                .Add(new ReorderSystem())
+                //ui
+                .Add(new UpdateMaxLifeTimeSystem())
+                .Add(new ShowBuildingZoneSystem())
+                .Add(new UpdateTotalMoneySystem())
+                .Add(new UpdateFlapsSystem())
                 .OneFrame<Dead>()
+                .OneFrame<UpdateUIEvent>()
                 .Inject(StaticData)
                 .Inject(SceneData)
                 .Inject(RuntimeData)

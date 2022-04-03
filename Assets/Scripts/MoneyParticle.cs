@@ -12,7 +12,7 @@ namespace Client
 
         public void SetAmount(int amount)
         {
-            Amount.text = amount.ToString();
+            Amount.text = $"{amount}$";
             Destroy(gameObject,  SelfDestroyTime);
         }
 

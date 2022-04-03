@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterViews:
   - {fileID: 3867436812668659417, guid: 30faee0b2f235fd4593f3fb6da67fba0, type: 3}
-  PushPower: 50
   MoneyParticle: {fileID: 5056918867724471525, guid: dbede9586b0cf004588332befda51770, type: 3}
   SpawnTime: 2
+  StuckTime: 5
+  ItemsToBuy:
+  - {fileID: 4798164621674750281, guid: cb378466d198cfb4081e938f73907f93, type: 3}
+  - {fileID: 4798164621674750281, guid: f01586109a3613a4498890fa57ea245a, type: 3}
+  - {fileID: 4798164621674750281, guid: 323833e2dd83f81469e5ec1b6fac9504, type: 3}
+  StartFlaps: 1
+  ForcePower: 6
+  ForceDirection: {x: -1, y: 1, z: 0}
+  StartFlapPrice: 1

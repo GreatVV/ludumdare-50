@@ -18,9 +18,15 @@ namespace Client
                 _world.NewEntity().Get<SpawnDeathPosition>().position = dead.position;
                 _runtimeData.MoneyForDeath++;
 
+                var character = _filter.Get1(i);
+                character.view.Ragdoll.TurnOnRagdoll(true);
+                
+
                 _runtimeData.Money += _runtimeData.MoneyForDeath;
+                _runtimeData.MaxLifeTime = Time.time - _runtimeData.StartFallTime;
 
                 var ecsEntity = _filter.GetEntity(i);
+                ecsEntity.Del<Flying>();
                 ecsEntity.Del<Dead>();
                 ecsEntity.Get<DeathHasCome>().time = Time.realtimeSinceStartup;
             }

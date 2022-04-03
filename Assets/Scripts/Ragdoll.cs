@@ -10,6 +10,7 @@ namespace Client
         public Rigidbody[] Rigidbodies;
         public Collider[] Colliders;
         public Collider[] TurnOffColliders;
+        public Rigidbody TurnOffRigidbody;
 
         public struct RigidbodyStartPosition
         {
@@ -19,6 +20,7 @@ namespace Client
         }
 
         public List<RigidbodyStartPosition> _start = new List<RigidbodyStartPosition>();
+        public bool IsOn;
 
         public void Start()
         {
@@ -34,11 +36,25 @@ namespace Client
 
         public void TurnOnRagdoll(bool state)
         {
+            if (IsOn == state)
+            {
+                return;
+            }
+
+            IsOn = state;
+
+            Vector3 velocity = default;
+            if (state)
+            {
+                velocity = TurnOffRigidbody.velocity;
+            }
+            TurnOffRigidbody.isKinematic = state;
             Animator.enabled = !state;
 
             foreach (var r in Rigidbodies)
             {
                 r.isKinematic = !state;
+                r.velocity = velocity;
             }
                                                       
             foreach (var c in Colliders)

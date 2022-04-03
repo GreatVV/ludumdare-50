@@ -1,6 +1,7 @@
 ﻿using System;
 using Leopotam.Ecs;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace Client
@@ -8,12 +9,19 @@ namespace Client
     internal class LaunchSystem : IEcsRunSystem
     {
         private EcsFilter<CharacterRef, Launchable> _filter;
+        private EcsFilter<CharacterRef, Flying> _filterFlying;
         private StaticData _staticData;
         private SceneData _sceneData;
+        private RuntimeData _runtimeData;
 
         public void Run()
         {
-            if (_filter.IsEmpty())
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+
+            if (_runtimeData.IsDragging)
             {
                 return;
             }
@@ -22,20 +30,32 @@ namespace Client
             {
                 foreach (var i in _filter)
                 {
-                    var character = _filter.Get1(i);
-                    
-
-                    character.view.Animator.enabled = false;
-                    character.view.Ragdoll.TurnOnRagdoll(true);
-                    foreach (var rigidbody in character.view.Ragdoll.Rigidbodies)
-                    {
-                        if (rigidbody)
-                            rigidbody.AddForce(Vector3.left * _staticData.PushPower);
-                    }
-
+                    _runtimeData.StartFallTime = Time.time;
                     _sceneData.FallCamera.enabled = true;
 
-                    _filter.GetEntity(i).Del<Launchable>();
+                    var ecsEntity = _filter.GetEntity(i);
+                    ecsEntity.Get<Flying>();
+                    ecsEntity.Del<Launchable>();
+                }
+
+                foreach (var i in _filterFlying)
+                {
+                    var character = _filterFlying.Get1(i);
+                    
+                    if (_runtimeData.FlapsLeft > 0)
+                    {
+                        _runtimeData.FlapsLeft--;
+                        character.view.Flap();
+                        character.view.Rigidbody.AddForce(_staticData.ForceDirection.normalized * _staticData.ForcePower,
+                            ForceMode.Impulse);
+                    }
+                    else
+                    {
+                        character.view.Ragdoll.TurnOnRagdoll(true);
+                        _filterFlying.GetEntity(i).Del<Flying>();
+                    }
+
+                    _filterFlying.GetEntity(i).Get<UpdateUIEvent>();
                 }
             }
         }

@@ -8,6 +8,7 @@ namespace Client
         private EcsFilter<CharacterRef, DeathHasCome> _filter;
         private StaticData _staticData;
         private SceneData _sceneData;
+        private EcsWorld _world;
 
         public void Run()
         {
@@ -20,6 +21,8 @@ namespace Client
                 {
                     var ecsEntity = _filter.GetEntity(i);
                     _sceneData.FallCamera.enabled = false;
+
+                    _world.NewEntity().Get<UpdateUIEvent>();
                    
                     ecsEntity.Get<Teleport>();
                 }
