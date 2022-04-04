@@ -32,6 +32,7 @@ namespace Client
                 {
                     _runtimeData.StartFallTime = Time.time;
                     _sceneData.FallCamera.enabled = true;
+                    _runtimeData.Jumps++;
 
                     var ecsEntity = _filter.GetEntity(i);
                     ecsEntity.Get<Flying>();

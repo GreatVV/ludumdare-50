@@ -25,6 +25,8 @@ namespace Client
                 _runtimeData.Money += _runtimeData.MoneyForDeath;
                 _runtimeData.MaxLifeTime = Time.time - _runtimeData.StartFallTime;
 
+                character.view.Dissolve();
+
                 var ecsEntity = _filter.GetEntity(i);
                 ecsEntity.Del<Flying>();
                 ecsEntity.Del<Dead>();

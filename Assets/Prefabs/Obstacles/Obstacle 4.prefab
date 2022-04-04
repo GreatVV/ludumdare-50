@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1206f836014357ad223ffd686b7cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Price: 2
+  Price: 1
   PriceLabel: {fileID: 724713239516335606}
 --- !u!135 &4798164621674750282
 SphereCollider:
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1$
+  m_text: 2$
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe15ad839bc646f4aa0508a977f0c403, type: 2}
   m_sharedMaterial: {fileID: -4946688759636957166, guid: fe15ad839bc646f4aa0508a977f0c403, type: 2}

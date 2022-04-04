@@ -12,9 +12,9 @@ namespace Client
 
         public void Run()
         {
-            _sceneData.BuildingZone.SetActive(!_filter.IsEmpty() && !_draggable.IsEmpty());
+            _sceneData.BuildingZone.SetActive(!_filter.IsEmpty() && !_draggable.IsEmpty() && _runtimeData.Jumps > 0);
             _sceneData.ItemSpawnRoot.gameObject.SetActive(!_filter.IsEmpty());
-            _sceneData.BuyFlapsRoot.SetActive(!_filter.IsEmpty());
+            _sceneData.BuyFlapsRoot.SetActive(!_filter.IsEmpty() && _runtimeData.Jumps > 0);
             _sceneData.BuyFlapButton.interactable = _runtimeData.FlapPrice <= _runtimeData.Money;
         }
     }

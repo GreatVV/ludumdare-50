@@ -15,6 +15,8 @@ namespace Client
         public int FlapsLimit;
         public int FlapPrice;
 
+        public int Jumps;
+
         public float MaxLifeTime
         {
             get => PlayerPrefs.GetFloat("MaxLife");

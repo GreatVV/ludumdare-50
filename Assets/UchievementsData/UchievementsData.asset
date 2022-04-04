@@ -19,7 +19,7 @@ MonoBehaviour:
     Name: More is better
     Difficult: 1
   BuildWithALotOfScenes:
-    Progress: 0
+    Progress: 1
     Name: Multiverse
     Difficult: 2
   BuildForAndroidOrIos:
@@ -35,7 +35,7 @@ MonoBehaviour:
     Name: Exclusive build
     Difficult: 0
   Builds:
-    Progress: 0
+    Progress: 1
     Name: Great builder
     Difficult: 2
   PauseInPlayMode:
@@ -47,18 +47,18 @@ MonoBehaviour:
     Name: Pause in pause
     Difficult: 3
   SaveScene:
-    Progress: 45
+    Progress: 52
     Name: Keep calm and save scene
     Difficult: 3
   ImportPackages:
-    Progress: 2
+    Progress: 3
     Name: Project from projects
     Difficult: 0
   CompilingTime:
-    Progress: 4.0728254
+    Progress: 4.2367578
     Name: Compiling...
     Difficult: 0
   BuildForWeb:
-    Progress: 0
+    Progress: 1
     Name: Browser warrior
     Difficult: 0

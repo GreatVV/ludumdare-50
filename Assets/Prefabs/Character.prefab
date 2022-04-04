@@ -52,6 +52,10 @@ MonoBehaviour:
   Animator: {fileID: 6718860110399590847}
   Ragdoll: {fileID: 5176481479415524599}
   Rigidbody: {fileID: 5346985169810398234}
+  DissolveMaterial: {fileID: 2100000, guid: a734ef322d9503142abe90e4e10e6fae, type: 2}
+  NormalMaterial: {fileID: 2100000, guid: 21c523da74de5e640b1b068246fd96e1, type: 2}
+  Renderer: {fileID: 5446278237155020589}
+  DissolveTime: 1
 --- !u!95 &6718860110399590847
 Animator:
   serializedVersion: 3

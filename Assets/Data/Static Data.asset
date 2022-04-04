@@ -19,10 +19,14 @@ MonoBehaviour:
   StuckTime: 5
   ItemsToBuy:
   - {fileID: 4798164621674750281, guid: cb378466d198cfb4081e938f73907f93, type: 3}
-  - {fileID: 4798164621674750281, guid: f01586109a3613a4498890fa57ea245a, type: 3}
+  - {fileID: 4798164621674750281, guid: 9868077ccbe38ac439e519b599837de3, type: 3}
+  - {fileID: 4798164621674750281, guid: 2af8f260bcc6e254182a287253d8f234, type: 3}
+  - {fileID: 4798164621674750281, guid: 323833e2dd83f81469e5ec1b6fac9504, type: 3}
   - {fileID: 4798164621674750281, guid: 323833e2dd83f81469e5ec1b6fac9504, type: 3}
   - {fileID: 4798164621674750281, guid: 347fd85f5eb555343ab9709b36dfaf87, type: 3}
   - {fileID: 4798164621674750281, guid: 64e181440ea7776489c50c8333c03c21, type: 3}
+  - {fileID: 4798164621674750281, guid: a405e02ef7eac5c48bb3fc3ad2dc1dc4, type: 3}
+  - {fileID: 4798164621674750281, guid: 6b42d72d6aaf6ca468be9dde762c0846, type: 3}
   StartFlaps: 1
   ForcePower: 6
   ForceDirection: {x: -1, y: 1, z: 0}
