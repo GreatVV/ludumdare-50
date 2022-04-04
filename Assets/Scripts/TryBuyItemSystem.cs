@@ -24,6 +24,8 @@ namespace Client
                     draggable.transform.SetParent(null, true);
                     draggable.PriceLabel.enabled = false;
 
+                    draggable.Buy();
+
                     ecsEntity.Get<UpdateUIEvent>();
                     ecsEntity.Get<ReorderItems>();
                     ecsEntity.Get<CanBeDragged>();

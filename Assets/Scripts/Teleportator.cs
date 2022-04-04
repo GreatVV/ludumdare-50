@@ -10,10 +10,23 @@ namespace Client
 
         private void OnValidate()
         {
-            if (TeleportExit && TeleportExit.transform.parent == transform)
+            if (!Application.isPlaying)
             {
-                TeleportExit.transform.localPosition = Offset;
+                if (TeleportExit && TeleportExit.transform.parent == transform)
+                {
+                    TeleportExit.transform.localPosition = Offset;
+                }
             }
+        }
+
+        private void Start()
+        {
+            TeleportExit.transform.localPosition = Vector3.zero;
+        }
+
+        public void OnBuy()
+        {
+            TeleportExit.transform.localPosition = Offset;
         }
 
         private void OnDrawGizmos()

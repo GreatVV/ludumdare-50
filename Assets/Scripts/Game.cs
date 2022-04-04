@@ -41,7 +41,6 @@ namespace Client {
                 .Add(new ShowBuildingZoneSystem())
                 .Add(new UpdateTotalMoneySystem())
                 .Add(new UpdateFlapsSystem())
-                .OneFrame<Dead>()
                 .OneFrame<UpdateUIEvent>()
                 .Inject(StaticData)
                 .Inject(SceneData)

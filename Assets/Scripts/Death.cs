@@ -10,7 +10,11 @@ namespace Client
             var character = other.collider.GetComponentInParent<CharacterView>();
             if (character)
             {
-                character.Entity.Get<Dead>().position = other.GetContact(0).point;
+                if (!character.Entity.Has<DeathHasCome>())
+                {
+                    Debug.Log("Add dead death");
+                    character.Entity.Get<Dead>().position = other.GetContact(0).point;
+                }
             }
         }
     }

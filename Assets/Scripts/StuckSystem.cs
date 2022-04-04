@@ -7,9 +7,10 @@ namespace Client
     {
         private EcsFilter<CollisionTime> _filter;
         private StaticData _staticData;
-        private EcsFilter<CharacterRef>.Exclude<DeathHasCome> _nonDead;
+        private EcsFilter<CharacterRef>.Exclude<DeathHasCome, Launchable> _nonDead;
         public void Run()
         {
+            var killAll = false;
             foreach (var i in _filter)
             {
                 var collisionTime = _filter.Get1(i);
@@ -19,6 +20,18 @@ namespace Client
                     {
                         _nonDead.GetEntity(i1).Get<Dead>();
                     }
+
+                    Debug.Log("Add dead death stuck");
+                    killAll = true;
+                    _filter.GetEntity(i).Del<CollisionTime>();
+                }
+            }
+
+            if (killAll)
+            {
+                foreach (var i in _filter)
+                {
+                    _filter.GetEntity(i).Del<CollisionTime>();
                 }
             }
         }

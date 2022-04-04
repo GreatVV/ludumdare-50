@@ -9,6 +9,8 @@ namespace Client
         private RuntimeData _runtimeData;
         private StaticData _staticData;
 
+        private EcsFilter<CollisionTime> _collisionTime;
+
         public void Run()
         {
             foreach (var i in _filter)
@@ -26,6 +28,11 @@ namespace Client
                 ecsEntity.Del<DeathHasCome>();
                 ecsEntity.Del<Teleport>();
                 ecsEntity.Get<UpdateUIEvent>();
+
+                foreach (var i1 in _collisionTime)
+                {
+                    _collisionTime.GetEntity(i1).Del<CollisionTime>();
+                }
             }
         }
     }

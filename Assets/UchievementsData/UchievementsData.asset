@@ -35,11 +35,11 @@ MonoBehaviour:
     Name: Exclusive build
     Difficult: 0
   Builds:
-    Progress: 1
+    Progress: 4
     Name: Great builder
     Difficult: 2
   PauseInPlayMode:
-    Progress: 16
+    Progress: 21
     Name: Debug like a pro
     Difficult: 3
   PauseInEditMode:
@@ -47,18 +47,18 @@ MonoBehaviour:
     Name: Pause in pause
     Difficult: 3
   SaveScene:
-    Progress: 52
+    Progress: 54
     Name: Keep calm and save scene
     Difficult: 3
   ImportPackages:
-    Progress: 3
+    Progress: 4
     Name: Project from projects
     Difficult: 0
   CompilingTime:
-    Progress: 4.2367578
+    Progress: 4.3431983
     Name: Compiling...
     Difficult: 0
   BuildForWeb:
-    Progress: 1
+    Progress: 4
     Name: Browser warrior
     Difficult: 0

@@ -1,4 +1,5 @@
-﻿using Leopotam.Ecs;
+﻿using System;
+using Leopotam.Ecs;
 using UnityEngine;
 
 namespace Client
@@ -11,8 +12,31 @@ namespace Client
             var character = other.collider.GetComponentInParent<CharacterView>();
             if (character)
             {
-                Entity = character.Entity.GetInternalWorld().NewEntity();
-                Entity.Get<CollisionTime>().time = Time.time;
+                if (!Entity.IsAlive())
+                {
+                    Entity = character.Entity.GetInternalWorld().NewEntity();
+                }
+
+                ref var collisionTime = ref Entity.Get<CollisionTime>();
+                collisionTime.time = Time.time;
+                collisionTime.Other = other;
+                collisionTime.ThisGO = gameObject;
+            }
+        }
+
+        private void OnCollisionStay(Collision other)
+        {
+            var character = other.collider.GetComponentInParent<CharacterView>();
+            if (character)
+            {
+                if (!Entity.IsAlive())
+                {
+                    Entity = character.Entity.GetInternalWorld().NewEntity();
+                    ref var collisionTime = ref Entity.Get<CollisionTime>();
+                    collisionTime.time = Time.time;
+                    collisionTime.Other = other;
+                    collisionTime.ThisGO = gameObject;
+                }
             }
         }
 
