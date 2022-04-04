@@ -20,18 +20,22 @@ namespace Client
             if (Mouse.current.leftButton.wasPressedThisFrame)
             {
                 var ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-                if (Physics.Raycast(ray, out var hitInfo) &&
-                    hitInfo.collider.TryGetComponent<DraggableView>(out var draggableView))
+                if (Physics.Raycast(ray, out var hitInfo))
                 {
-                    _runtimeData.IsDragging = true;
-                    
-                    if (draggableView.Entity.Has<CanBeDragged>()) 
+                    var draggableView = hitInfo.collider.GetComponentInParent<DraggableView>();
+                    if (draggableView)
                     {
-                        _runtimeData.DragTarget = draggableView;
-                    }
-                    else                                      
-                    {
-                        draggableView.Entity.Get<TryBuy>();
+
+                        _runtimeData.IsDragging = true;
+
+                        if (draggableView.Entity.Has<CanBeDragged>())
+                        {
+                            _runtimeData.DragTarget = draggableView;
+                        }
+                        else
+                        {
+                            draggableView.Entity.Get<TryBuy>();
+                        }
                     }
                 }
             }

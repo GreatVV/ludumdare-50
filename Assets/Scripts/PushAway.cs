@@ -15,6 +15,12 @@ namespace Client
                 {
                     other.rigidbody.AddForce((other.collider.transform.position - transform.position).normalized * Power, ForceMode.Impulse);
                 }
+
+                foreach (var ragdollRigidbody in character.Ragdoll.Rigidbodies)
+                {
+                    ragdollRigidbody.AddForce(
+                        (ragdollRigidbody.transform.position - transform.position).normalized * Power, ForceMode.Impulse);
+                }
             }
         }
     }

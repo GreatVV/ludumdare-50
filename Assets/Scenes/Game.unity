@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44
+  m_fontSize: 25.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2044,7 +2044,7 @@ MonoBehaviour:
   CurrentLifeTime: {fileID: 1418801371}
   DragArea: {fileID: 714404085}
   ItemSpawnRoot: {fileID: 945541744}
-  ItemOffset: {x: 2, y: 0, z: 0}
+  ItemOffset: {x: 3, y: 0, z: 0}
   MoneyLabel: {fileID: 1183902854}
   FlapsAmountLabel: {fileID: 707857646}
   BuyFlapLabel: {fileID: 1957965828}
